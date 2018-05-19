@@ -1,0 +1,63 @@
+{
+  "pages": [
+    "pages/tabBar/index/index",
+    "pages/tabBar/user/user",
+    "pages/tabBar/task/task",
+    "pages/tabBar/group/group"
+  ],
+  "subPackages": [
+    {
+      "root": "pages/component/",
+      "pages": [
+        "pages/tpl/tpl",
+        "pages/savegroup/savegroup",
+        "pages/group/group",
+        "pages/tpladd/tpladd",
+        "pages/bill/bill",
+        "pages/tcan/tcan",
+        "pages/recharge/recharge"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "#333",
+    "navigationBarBackgroundColor": "#43CD80",
+    "navigationBarTitleText": "旺旺短信",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/tabBar/index/index",
+        "text": "首页",
+        "iconPath": "img/navbar/index.png",
+        "selectedIconPath": "img/navbar/index_ch.png"
+      },
+      {
+        "pagePath": "pages/tabBar/group/group",
+        "text": "联系人",
+        "iconPath": "img/navbar/group.png",
+        "selectedIconPath": "img/navbar/group_ch.png"
+      },
+      {
+        "pagePath": "pages/tabBar/task/task",
+        "text": "任务中心",
+        "iconPath": "img/navbar/time.png",
+        "selectedIconPath": "img/navbar/time_ch.png"
+      },
+      {
+        "pagePath": "pages/tabBar/user/user",
+        "text": "个人中心",
+        "iconPath": "img/navbar/user.png",
+        "selectedIconPath": "img/navbar/user_ch.png"
+      }
+    ],
+    "color": "#999",
+    "selectedColor": "#43CD80"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

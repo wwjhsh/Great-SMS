@@ -1,0 +1,94 @@
+<!--index.wxml-->
+<view class='container ab'>
+  <form style='width:100%;'>
+    <view class='sms-input-area'>
+      <view class='sms-input-tip'>
+        <label>短信类型</label>
+        <text></text>
+      </view>
+      <view class='sms-input-main'>
+        <picker mode="selector" bindchange="inputContent"  data-type='typeid' range="{{typeList}}" range-key="name" value="{{typeindex}}" disabled="{{!isLogin}}">
+          <view class="picker">
+             当前选择类型：{{typeList[typeindex].name||""}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='sms-input-area'>
+      <view class='sms-input-tip'>
+        <label>短信签名</label>
+        <text></text>
+      </view>
+      <view class='sms-input-main'>
+        <input placeholder='签名不应包含敏感词' value='{{addData.sign}}' data-type='sign' bindinput="inputContent"></input>
+      </view>
+    </view>
+    <view class='sms-input-area'>
+      <view class='sms-input-tip'>
+        <label>短信模板</label>
+        <text></text>
+      </view>
+      <view class='sms-input-main'>
+        <textarea placeholder='不能发送房产，发票，医疗，贷款，中奖，教育，营销等敏感内容' value='{{addData.content}}' data-type='content' bindinput="inputContent"></textarea>
+      </view>
+    </view>
+    <!-- <view class='sms-input-area clearfix' id='count' style='width:100%;'>
+      <text style='float:right;'>6/70</text>
+    </view> -->
+    <view class='sms-button-area'>
+      <button data-type='tpl' bindtap='choose'>选择模板</button>
+      <button data-type='group' bindtap='choose'>选择联系人</button>
+      <view wx:if="{{addData['group'].length>0}}">已选择{{addData['group'].length}}个联系人组</view>
+    </view>
+    <view class='sms-input-area'>
+      <view class='sms-input-tip'>
+        <label>更多发送号码</label>
+        <text></text>
+      </view>
+      <view class='sms-input-main'>
+        <input placeholder='多个号码以英文逗号分隔' value='{{addData.mobile}}' data-type='mobile' bindinput="inputContent"></input>
+      </view>
+    </view>
+    <view class='sms-input-area'>
+      <view class='sms-input-tip'>
+        <label>定时功能</label>
+        <text></text>
+      </view>
+      <view class='sms-input-main'>
+        <switch checked="{{addData.isSetTime}}" data-type='isSetTime' bindchange="inputContent" style='margin-bottom:4px;'/>
+        <!-- <input wx:if="{{addData.isSetTime==true}}" placeholder='时间选择' value='{{addData.sendtime}}' data-type='sendtime' bindinput="inputContent"></input> -->
+        <view wx:if="{{addData.isSetTime==true}}">
+          <picker mode="date" value="{{addData.date}}" data-type='date' bindchange="inputContent">
+            <view class="picker">
+              日期: {{addData.date}}
+            </view>
+          </picker>
+          <picker mode="time" value="{{addData.time}}" data-type='time' bindchange="inputContent">
+            <view class="picker">
+              时间: {{addData.time}}
+            </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <view class='sms-button-area'>
+      <button type='primary' bindtap='display'>发送</button>
+      <button form-type="reset">重置</button>
+    </view>
+     <modal title="预览短信" hidden="{{hideDisplay}}" confirm-text="确认发送" cancel-text="取消" bindconfirm="send" bindcancel="cancelDisplay">
+      <view class='sms-input-area'>
+        <view class='sms-input-tip'>
+          <label>短信正文：</label>
+        </view> 
+        <view class='sms-input-main'>
+          {{displayData.content}}
+        </view>
+      </view>
+      <view wx:if="{{displayData.ban.length>0}}">包含敏感词
+      <text style="color:red;">{{displayData.ban}} （包含敏感词的短信将进入审核）</text> 
+      </view>
+      <view style="color:#000;">{{displayData.msg}}
+      </view>
+    </modal>
+  </form>
+</view>

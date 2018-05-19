@@ -1,0 +1,11 @@
+<!--pages/component/pages/tcan/tcan.wxml-->
+<view class='pt-container'>
+  <view wx:for="{{tcanList}}" class='tcanitem useritem' data-id='{{item.id}}' bindtap='setItem'>
+    <view class='left'>普通条数<span class="num">{{item.num}}</span>条</view>
+    <view class='right'>
+      <span class="money">￥{{item.price}}</span>
+      <radio value="{{item.id}}" checked="{{item.id==chooseId}}" />
+    </view>
+  </view>
+  <button type='primary' bindtap='buy'>购买</button>
+</view>

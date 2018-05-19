@@ -1,0 +1,12 @@
+<!--pages/bill/bill.wxml-->
+ <scroll-view style="background-color:#fff;" scroll-y enable-back-to-top> 
+  <!-- <navigator wx:for="{{groupList}}"  -->
+  <view class='useritem billitem' wx:for="{{billList}}" wx:key="item.id">
+    <view class='left'>
+    <text class='name'>{{item.name}}</text>
+    <text class='time'>{{item.time}}</text>
+    </view>
+    <view wx:if="{{item.type==2}}" class='right red'>-{{item.money}}元</view>
+    <view wx:if="{{item.type==1}}" class='right blue'>+{{item.money}}元</view>
+  </view>
+ </scroll-view> 

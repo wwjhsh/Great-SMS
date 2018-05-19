@@ -1,0 +1,15 @@
+/* pages/component/pages/tcan/tcan.wxss */
+.tcanitem.useritem{
+  padding: 4px;
+  margin: 10px 0;
+  background-color: #fff;
+  border-radius: 4px;
+}
+.tcanitem .money{
+  margin-right: 10px;
+}
+.tcanitem .num{
+  font-size: 36rpx;
+  padding: 0 10rpx;
+  color: #43CD80;
+}

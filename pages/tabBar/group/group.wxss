@@ -1,0 +1,11 @@
+/* pages/group/group.wxss */
+.groupitem .content {
+  width: 300rpx;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.useritem.groupitem{
+  height: 80rpx;
+}

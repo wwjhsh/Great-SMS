@@ -1,0 +1,25 @@
+<!--pages/component/pages/savegroup/savegroup.wxml-->
+<view class='container'>
+  <form style='width:100%;'>
+    <view class='sms-input-area'>
+      <view class='sms-input-tip'>
+        <label>组名</label>
+      </view>
+      <view class='sms-input-main'>
+        <input placeholder='请输入联系人组名，方便查找' value='{{name}}' data-type='name' bindinput="inputContent"></input>
+      </view>
+    </view>
+    <view class='sms-input-area'>
+      <view class='sms-input-tip'>
+        <label>手机号码</label>
+      </view>
+      <view class='sms-input-main'>
+        <textarea placeholder='请以英文逗号（,）分割号码：178XXXXXXXX,178XXXXXXXX' value='{{mobile}}' data-type='mobile' bindinput="inputContent"></textarea>
+      </view>
+    </view>
+    <view class='sms-button-area'>
+      <button form-type='submit' type='primary' bindtap='saveGroup'>保存</button>
+      <button wx:if="{{type=='edit'}}" bindtap='delGroup'>删除</button>
+    </view>
+  </form>
+</view>

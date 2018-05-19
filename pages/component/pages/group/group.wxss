@@ -1,0 +1,28 @@
+/* pages/group/group.wxss */
+.groupitem .content {
+  width: 300rpx;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.useritem.groupitem{
+  height: 80rpx;
+}
+.g-save{
+  position: fixed;
+  bottom: 80rpx;
+  left: 280rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 200rpx;
+  font-size: 32rpx;
+  background-color:#43CD80;
+  color: white;
+  border-color: #43CD80;
+}
+.add.left{
+  right: unset;
+  left: 100rpx;
+  bottom: 80rpx;
+}

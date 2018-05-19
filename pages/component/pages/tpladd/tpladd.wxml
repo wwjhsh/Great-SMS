@@ -1,0 +1,26 @@
+<!--pages/component/pages/tpladd/tpladd.wxml-->
+<view class='container'>
+  <form style='width:100%;'>
+    <view class='sms-input-area'>
+      <view class='sms-input-tip'>
+        <label>模板名称</label>
+      </view>
+      <view class='sms-input-main'>
+        <input placeholder='请输入短信模板名称' value='{{name}}' data-type='name' bindinput="inputContent"></input>
+      </view>
+    </view>
+    <view class='sms-input-area'>
+      <view class='sms-input-tip'>
+        <label>模板内容</label>
+      </view>
+      <view class='sms-input-main'>
+        <textarea placeholder='不能发送房产，发票，医疗，贷款，中奖，教育，营销等敏感内容' value='{{content}}' data-type='content' bindinput="inputContent"></textarea>
+      </view>
+    </view>
+    <view class='sms-button-area'>
+      <button form-type='submit' type='primary' bindtap='saveTpl'>保存</button>
+      <button wx:if="{{type=='edit'}}" bindtap='delTpl'>删除</button>
+    </view>
+  </form>
+</view>
+

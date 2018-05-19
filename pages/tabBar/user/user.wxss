@@ -1,0 +1,33 @@
+/**index.wxss**/
+button.userbtn {
+font-size:unset;
+text-align:unset;
+line-height:unset;
+background-color:#fff;
+}
+button.userbtn::after{
+border: none;
+}
+.userbtn{
+  padding: 15rpx 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  border-bottom: 1px solid #ddd;
+}
+.userbtn .icon{
+  width: 60rpx;
+  height: 60rpx;
+}
+.userbtn .content{
+  padding-left: 10rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+}
+.userbtn .content .detail{
+  font-size: 30rpx;
+  color: #666;
+}

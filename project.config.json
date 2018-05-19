@@ -1,0 +1,80 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.93",
+	"appid": "wx1b765abec4d05099",
+	"projectname": "%E6%97%BA%E6%97%BA%E7%9F%AD%E4%BF%A1",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 5,
+			"list": [
+				{
+					"id": 0,
+					"name": "group",
+					"pathName": "pages/tabBar/group/group",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "savegroup",
+					"pathName": "pages/component/pages/savegroup/savegroup",
+					"query": "type=edit&id=1&mobile=17777777777&name=000"
+				},
+				{
+					"id": 2,
+					"name": "tpladd",
+					"pathName": "pages/component/pages/tpladd/tpladd",
+					"query": "type=edit&id=1&content=17777777777&name=000"
+				},
+				{
+					"id": -1,
+					"name": "user",
+					"pathName": "pages/tabBar/user/user",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "useritem",
+					"pathName": "pages/component/pages/group/group",
+					"query": "type=choose"
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/tabBar/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "task",
+					"pathName": "pages/tabBar/task/task",
+					"query": ""
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,30 @@
+<!--pages/group/group.wxml-->
+<!--index.wxml-->
+<view class='container'>
+  <!-- <button open-type="getUserInfo" class="userinfo" wx:if="{{!isLogin}}" bindgetuserinfo="smsLoginClick">
+    <image class="userinfo-avatar" src="../../../img/user.png" background-size="cover"></image>
+    <text>点此登陆</text>
+  </button> -->
+  <view style='width:100%;'>
+    <view class='sms-input-area'>
+      <view class='sms-input-main'>
+        <input placeholder='通过名称进行搜索' value='{{name}}' bindinput="inputContent"></input>
+      </view>
+    </view>
+    <scroll-view scroll-y enable-back-to-top>
+      <checkbox-group bindchange="checkboxChange">
+        <view wx:for="{{groupList}}" class='useritem groupitem' wx:key="item.id" data-id='item.id' bindinput="itemChoose">
+          <text class='left'>{{item.name}}</text>
+          <view class='right'>
+            <text class='content'>{{item.mobile}}</text>
+            <span class='unit'>
+              <checkbox value="{{item.id}}"/>
+            </span>
+          </view>
+        </view>
+      </checkbox-group>
+    </scroll-view>
+    <navigator url='/pages/component/pages/savegroup/savegroup?type=add' class='add left'>+</navigator>
+    <button class='g-save' bindtap='save'>确认</button>
+  </view>
+</view>

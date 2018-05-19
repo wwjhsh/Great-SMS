@@ -1,0 +1,7 @@
+<!--pages/recharge/recharge.wxml-->
+<view class='pt-container'style="background-color:#fff;">
+  <view class='moneylist clearfix'>
+    <view wx:for="{{moneyList}}" class="moneyitem {{item==chooseNum?'active':''}}" data-num='{{item}}' bindtap='setNum'>{{item}}元</view>
+  </view>
+  <button type='primary'>充值</button>
+</view>

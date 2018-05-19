@@ -1,0 +1,115 @@
+<!--index.wxml-->
+<view class="container">
+  <button open-type="getUserInfo" class="userinfo" wx:if="{{!hasUserInfo}}" bindgetuserinfo="smsLoginClick">
+    <image class="userinfo-avatar" src="../../../img/user.png" background-size="cover"></image>
+    <text>点此登陆</text>
+  </button>
+  <view class="userinfo" wx:if="{{hasUserInfo}}">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <!-- <text class="userinfo-nickname">{{userInfo.username}}1</text> -->
+  </view>
+  <view style='width:100%;' wx:if="{{hasUserInfo}}">
+    <view class='useritem' data-type="name" bindtap='editShow'>
+      <text class='left'>用户名</text>
+      <view class='right'>
+        <text>{{userInfo.username}}</text>
+        <text class='unit gray'>></text>
+      </view>
+    </view>
+    <modal title="修改用户名" hidden="{{hiddenEditName}}" data-type="name" confirm-text="修改" cancel-text="取消" bindconfirm="edit" bindcancel="cancel">
+      <view class='sms-input-area'>
+        <view class='sms-input-tip'>
+          <label>用户名</label>
+        </view> 
+        <view class='sms-input-main'>
+          <input placeholder='请输入新的用户名' value='{{editData}}' bindinput="inputContent"></input>
+        </view>
+      </view>
+    </modal>
+    <view class='useritem' data-type="mobile" bindtap='editShow'>
+      <text class='left'>手机号</text>
+      <view class='right'>
+        <text>{{userInfo.mobile}}</text>
+        <text class='unit gray'>></text>
+      </view>
+    </view>
+    <modal title="修改手机号" hidden="{{hiddenEditMobile}}" data-type="mobile" confirm-text="修改" cancel-text="取消" bindconfirm="edit" bindcancel="cancel">
+      <view class='sms-input-area'>
+        <view class='sms-input-tip'>
+          <label>手机号</label>
+        </view> 
+        <view class='sms-input-main'>
+          <input placeholder='请输入新的手机号' value='{{editData}}' bindinput="inputContent"></input>
+        </view>
+      </view>
+    </modal>
+    <view class='useritem' data-type="sign" bindtap='editShow'>
+      <text class='left'>默认签名</text>
+      <view class='right'>
+        <text>{{userInfo.defalutsign}}</text>
+        <text class='unit gray'>></text>
+      </view>
+    </view>
+    <modal title="修改默认签名" hidden="{{hiddenEditSign}}" data-type="sign" confirm-text="修改" cancel-text="取消" bindconfirm="edit" bindcancel="cancel">
+      <view class='sms-input-area'>
+        <view class='sms-input-tip'>
+          <label>默认签名</label>
+        </view> 
+        <view class='sms-input-main'>
+          <input placeholder='请输入默认签名，发送短信时默认填写' value='{{editData}}' bindinput="inputContent"></input>
+        </view>
+      </view>
+    </modal>
+    <view class='useritem'>
+      <text class='left'>账户余额</text>
+      <view class='right'>
+        <text class='blue'>{{userInfo.credit}}</text>
+        <text class='unit'>元</text>
+      </view>
+    </view>
+    <view class='useritem'>
+      <text class='left'>短信条数</text>
+      <view class='right'>
+        <text class='blue'>{{userInfo.num1}}</text>
+        <text class='unit'>条</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="container" wx:if="{{hasUserInfo}}" style='margin-top:20rpx;'>
+  <!-- <navigator  url="/pages/component/pages/recharge/recharge" class='userbtn'>
+    <image class='icon' src="../../../img/user/recharge.png" background-size="cover"></image>
+    <view class='content'>
+      <text class='title'>立即充值</text>
+      <text class='detail'>10元起充</text>
+    </view>
+  </navigator> -->
+  <navigator url="/pages/component/pages/tcan/tcan" class='userbtn'>
+    <image class='icon' src="../../../img/user/tcan.png" background-size="cover"></image>
+    <view class='content'>
+      <text class='title'>购买套餐</text>
+      <text class='detail'>购买短信条数,发送短信节约成本</text>
+    </view>
+  </navigator>
+  <navigator url="/pages/component/pages/tpl/tpl" class='userbtn'>
+    <image class='icon' src="../../../img/user/tpl.png" background-size="cover"></image>
+    <view class='content'>
+      <text class='title'>模板管理</text>
+      <text class='detail'>短信通知更加简单</text>
+    </view>
+  </navigator>
+  <navigator url="/pages/component/pages/bill/bill" class='userbtn'>
+    <image class='icon' src="../../../img/user/bill.png" background-size="cover"></image>
+    <view class='content'>
+      <text class='title'>账单记录</text>
+      <text class='detail'>充值消费一目了然</text>
+    </view>
+  </navigator>
+  <button open-type="contact" class='userbtn'>
+    <image class='icon' src="../../../img/user/kefu.png" background-size="cover"></image>
+    <view class='content'>
+      <text class='title'>客服系统</text>
+      <text class='detail'>联系客服进行线下充值</text>
+    </view>
+  </button>
+</view>
