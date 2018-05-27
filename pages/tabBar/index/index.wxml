@@ -49,7 +49,7 @@
         <input placeholder='多个号码以英文逗号分隔' value='{{addData.mobile}}' data-type='mobile' bindinput="inputContent"></input>
       </view>
     </view>
-    <view class='sms-input-area'>
+    <view class='sms-input-area' wx:if="{{addData.typeid!=2}}">
       <view class='sms-input-tip'>
         <label>定时功能</label>
         <text></text>
@@ -75,7 +75,7 @@
       <button type='primary' bindtap='display'>发送</button>
       <button form-type="reset">重置</button>
     </view>
-     <modal title="预览短信" hidden="{{hideDisplay}}" confirm-text="确认发送" cancel-text="取消" bindconfirm="send" bindcancel="cancelDisplay">
+     <modal title="预览短信" hidden="{{hideDisplay}}" confirm-text="确认发送" cancel-text="取消" bindconfirm="send" bindcancel="cancelDisplay" style="z-index:99999999;">
       <view class='sms-input-area'>
         <view class='sms-input-tip'>
           <label>短信正文：</label>

@@ -23,14 +23,6 @@ App({
       //     }
       //   }
       // })
-    setTimeout(() => {
-      util.login().then(() => {
-      }, () => {
-        wx.switchTab({
-          url: '/pages/tabBar/user/user'
-        })
-      });
-    }, 0);
   },
   onShow: function (opts) {
     // setTimeout(()=>{

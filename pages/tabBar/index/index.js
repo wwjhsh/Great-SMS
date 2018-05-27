@@ -25,7 +25,21 @@ Page({
     }
   },
   onLoad: function () {
-
+    // setTimeout(() => {
+      util.login().then(() => {
+        this.setData({
+          isLogin: true,
+          ['addData.sign']: app.globalData.userInfo.defalutsign
+        })
+        if (this.data.typeList.length == 0) {
+          this.getTypeList();
+        }
+      }, () => {
+        wx.switchTab({
+          url: '/pages/tabBar/user/user'
+        })
+      });
+    // }, 0);
   },
   onShow: function () {
     util.loginControl(false).then(() => {

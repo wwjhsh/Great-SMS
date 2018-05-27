@@ -52,8 +52,8 @@ const commonAjax = (url, types, data) => {
         if ((data.s== 'App.User_User.Login') || (header.Cookie!== undefined)) {
           // 封装reuqest  
           wx.request({
-            // url: url || 'https://sms.wwjelo.top', 
-            url: url || 'https://www.wwjelo.top', 
+            url: url || 'https://sms.wwjelo.top', 
+            // url: url || 'https://www.wwjelo.top', 
             data: datas,
             method: (types === 1) ? 'GET' : 'POST',
             header: header,
